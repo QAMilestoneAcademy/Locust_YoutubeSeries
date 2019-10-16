@@ -14,6 +14,7 @@ class UserBehaviour(TaskSet):
         self.client.post("/login.php",{"action": "process","userName": "qamile1@gmail.com","password": "qamile"
                                        ,"login.x": "16","login.y": "9"})
 
+
 class User(HttpLocust):
     task_set=UserBehaviour
     min_wait=5000
