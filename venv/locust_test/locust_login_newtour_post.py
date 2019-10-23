@@ -11,7 +11,7 @@ class UserBehaviour(TaskSet):
 
     @task
     def login_post(self):
-        self.client.post("/login.php",{"action": "process","userName": "qamile1@gmail.com","password": "qamile"
+        self.client.post("/login.php",data={"action": "process","userName": "qamile1@gmail.com","password": "qamile"
                                        ,"login.x": "16","login.y": "9"})
 
 
