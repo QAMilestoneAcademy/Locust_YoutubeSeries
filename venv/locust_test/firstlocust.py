@@ -1,4 +1,4 @@
-from locust import Locust, TaskSet,task
+from locust import Locust, TaskSet,task,bewteen
 
 class UserBehaviour(TaskSet):
 
@@ -13,5 +13,4 @@ class UserBehaviour(TaskSet):
 
 class User(Locust):
     task_set = UserBehaviour
-    min_wait = 5000
-    max_wait = 15000
+    wait_time = between(5, 10)

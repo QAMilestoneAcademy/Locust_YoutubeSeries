@@ -10,7 +10,7 @@
    ##verify through resp.text that user gets booking confirmation with post request
 #Run test with --logfile option to generate log file
 
-from locust import HttpLocust,TaskSet,task
+from locust import HttpLocust,TaskSet,task,between
 
 UserName=[
     ("qamile1@gmail.com","qamile"),
@@ -125,6 +125,5 @@ class UserBehaviour(TaskSet):
 
 class User(HttpLocust):
     task_set=UserBehaviour
-    min_wait=5000
-    max_wait = 10000
+    wait_time = between(5, 10)
     host="http://newtours.demoaut.com"

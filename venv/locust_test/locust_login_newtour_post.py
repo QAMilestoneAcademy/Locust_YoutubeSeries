@@ -5,7 +5,7 @@ password: qamile
 login.x: 16
 login.y: 9'''
 
-from locust import HttpLocust, TaskSet,task
+from locust import HttpLocust, TaskSet,task,between
 
 class UserBehaviour(TaskSet):
 
@@ -17,6 +17,5 @@ class UserBehaviour(TaskSet):
 
 class User(HttpLocust):
     task_set=UserBehaviour
-    min_wait=5000
-    max_wait = 10000
+    wait_time = between(5, 10)
     host="http://newtours.demoaut.com"
